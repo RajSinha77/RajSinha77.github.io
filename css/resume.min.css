@@ -6,6 +6,108 @@
     justify-content: space-between;
   }
   
+  .button-group {
+    display: flex;
+    gap: 16px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .btn-rect {
+    border-radius: 30px !important;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #00549c;
+  }
+  
+  .btn-rect i {
+    margin-right: 10px;
+  }
+  
+  .btn-rect:hover {
+    transform: translateY(-2px);
+    background-color: #007ae6;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-rect.email {
+    background-color: #28a745;
+  }
+  
+  .btn-rect.email:hover {
+    background-color: #218838;
+  }
+  
+  @media (max-width: 768px) {
+    .button-group {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .btn-rect {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  .button-group {
+    display: flex;
+    gap: 16px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .btn-rect {
+    border-radius: 30px !important;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #495057; /* same as social media icons */
+  }
+  
+  .btn-rect i {
+    margin-right: 10px;
+  }
+  
+  .btn-rect:hover {
+    transform: translateY(-2px);
+    background-color: #004480; /* same hover as social icons */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  }
+  
+  @media (max-width: 768px) {
+    .button-group {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .btn-rect {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+    
+
   .btn-rect {
     border-radius: 0 !important; /* Fully rectangular shape */
     width: 250px; /* Increased width to fit text comfortably */
@@ -42,5 +144,6 @@
       margin: 5px 0;
     }
   }
+  
   
   
