@@ -7,17 +7,20 @@
   }
   
   .btn-rect {
-    border-radius: 4px !important; /* Slightly softened corners */
-    width: 220px; /* Increased width to fit text */
+    border-radius: 0 !important; /* Fully rectangular shape */
+    width: 250px; /* Increased width to fit text comfortably */
     padding: 12px 20px; /* Comfortable click area */
     font-weight: 500; /* Semi-bold text */
     font-size: 1.1rem; /* Slightly larger font */
-    text-transform: uppercase; /* ALL CAPS styling */
+    text-transform: none; /* Normal text case */
     letter-spacing: 0.5px; /* Improved readability */
     margin: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle depth */
     transition: all 0.3s ease;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .btn-rect i {
@@ -39,4 +42,5 @@
       margin: 5px 0;
     }
   }
+  
   
