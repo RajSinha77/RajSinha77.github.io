@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Language switching functionality
     const translations = {
         en: {
-            title: "Raj's Blog",
-            logo: "Raj's Blog",
+            title: " Blog",
+            logo: "Blog",
             home: "Home",
             blog: "Blog",
             about: "About",
@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
             footer: "Made with 💙 by Raj Sinha"
         },
         de: {
-            title: "Rajs Blog",
-            logo: "Rajs Blog",
+            title: "Blog",
+            logo: "Blog",
             home: "Startseite",
             blog: "Blog",
             about: "Über",
