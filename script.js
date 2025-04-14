@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Mobile menu functionality
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarToggler = document.getElementById('mobileMenuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-    if (navbarToggler && navbarCollapse) {
+    if (navbarToggler && navLinks) {
         navbarToggler.addEventListener('click', function () {
-            navbarCollapse.classList.toggle('show');
+            navLinks.classList.toggle('active');
         });
     }
 
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Close mobile menu after click
-            if (window.innerWidth <= 992) {
-                navbarCollapse.classList.remove('show');
+            if (window.innerWidth <= 992 && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
             }
         });
     });
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Language switching functionality
     const translations = {
         en: {
-            title: " Blog",
+            title: "Blog",
             logo: "Blog",
             home: "Home",
             blog: "Blog",
@@ -66,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
             post14Title: "Time Series Forecasting with Transformers",
             post14Description: "Implementing transformer architectures for multivariate time series prediction...",
             readMore: "Read More",
-            footer: "Made with 💙 by Raj Sinha"
+            footer: "Made with 💙 by Raj Sinha",
+            pageUnderConstruction: "Page Under Construction"
         },
         de: {
             title: "Blog",
@@ -90,20 +91,21 @@ document.addEventListener('DOMContentLoaded', function () {
             post7Description: "Best practices for hyperparameter tuning in enterprise machine learning pipelines...",
             post8Title: "Zeitreihenvorhersage mit Transformern",
             post8Description: "Implementing transformer architectures for multivariate time series prediction...",
-            post9Title: "Optimizing Hyperparameters in Production ML Systems",
-            post9Description: "Best practices for hyperparameter tuning in enterprise machine learning pipelines...",
-            post10Title: "Time Series Forecasting with Transformers",
-            post10Description: "Implementing transformer architectures for multivariate time series prediction...",
-            post11Title: "Optimizing Hyperparameters in Production ML Systems",
-            post11Description: "Best practices for hyperparameter tuning in enterprise machine learning pipelines...",
-            post12Title: "Time Series Forecasting with Transformers",
-            post12Description: "Implementing transformer architectures for multivariate time series prediction...",
-            post13Title: "Optimizing Hyperparameters in Production ML Systems",
-            post13Description: "Best practices for hyperparameter tuning in enterprise machine learning pipelines...",
-            post14Title: "Time Series Forecasting with Transformers",
-            post14Description: "Implementing transformer architectures for multivariate time series prediction...",
+            post9Title: "Optimierung von Hyperparametern in Produktions-ML-Systemen",
+            post9Description: "Best Practices für die Hyperparameter-Optimierung in Unternehmens-ML-Pipelines...",
+            post10Title: "Zeitreihenvorhersage mit Transformern",
+            post10Description: "Implementierung von Transformer-Architekturen für multivariate Zeitreihenvorhersagen...",
+            post11Title: "Optimierung von Hyperparametern in Produktions-ML-Systemen",
+            post11Description: "Best Practices für die Hyperparameter-Optimierung in Unternehmens-ML-Pipelines...",
+            post12Title: "Zeitreihenvorhersage mit Transformern",
+            post12Description: "Implementierung von Transformer-Architekturen für multivariate Zeitreihenvorhersagen...",
+            post13Title: "Optimierung von Hyperparametern in Produktions-ML-Systemen",
+            post13Description: "Best Practices für die Hyperparameter-Optimierung in Unternehmens-ML-Pipelines...",
+            post14Title: "Zeitreihenvorhersage mit Transformern",
+            post14Description: "Implementierung von Transformer-Architekturen für multivariate Zeitreihenvorhersagen...",
             readMore: "Weiterlesen",
-            footer: "Gemacht mit 💙 von Raj Sinha"
+            footer: "Gemacht mit 💙 von Raj Sinha",
+            pageUnderConstruction: "Seite im Aufbau"
         }
     };
 
@@ -208,15 +210,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Initialization
+        const latestPostsHeader = document.querySelector('.blog-header h1');
+        if (latestPostsHeader) {
+            latestPostsHeader.textContent = translations[savedLang].pageUnderConstruction;
+        }
         setupPagination();
         displayPosts(currentPage);
         updatePaginationButtons();
          // Close mobile menu when clicking outside
-         document.addEventListener('click', function (e) {
-            if (window.innerWidth <= 992 && 
-                !navbarToggler.contains(e.target) && 
-                !navbarCollapse.contains(e.target)) {
-                navbarCollapse.classList.remove('show');
+        document.addEventListener('click', function (e) {
+            if (window.innerWidth <= 992 &&
+                !navbarToggler.contains(e.target) &&
+                !navLinks.contains(e.target) &&
+                e.target !== navbarToggler) {  // Also check the toggler itself
+                navLinks.classList.remove('active');
             }
         });
     });
