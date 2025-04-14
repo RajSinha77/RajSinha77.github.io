@@ -66,8 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             post14Title: "Microsoft's Kinect - From Gaming to Enterprise",
             post14Description: "Microsoft's Kinect (1st launched in 2010) was a futuristic device that used infrared...",
             readMore: "Read More",
-            footer: "Made with 💙 by Raj Sinha",
-            pageUnderConstruction: "Page Under Construction"
+            footer: "Made with 💙 by Raj Sinha"
         },
         de: {
             title: "Blog",
@@ -105,8 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
             post14Title: "Microsofts Kinect - Vom Gaming zum Unternehmen",
             post14Description: "Microsofts Kinect (erstmals 2010 auf den Markt gebracht) war ein futuristisches Gerät, das Infrarot verwendete...",
             readMore: "Weiterlesen",
-            footer: "Gemacht mit 💙 von Raj Sinha",
-            pageUnderConstruction: "Seite im Aufbau"
+            footer: "Gemacht mit 💙 von Raj Sinha"
         }
     };
 
